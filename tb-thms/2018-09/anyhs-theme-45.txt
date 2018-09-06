@@ -237,20 +237,19 @@ $("#search_tag_button").click(function(){
 
 
 
-/** scroll to ID **/
-var loc_hash = location.hash;
-var loc_hash_boo = Boolean(loc_hash);
-    
-if (location.pathname != "/" && loc_hash_boo == false) {
-    var cont = $("#content").offset().top;
-    var cont = cont - 100;
-    var cont = String(cont);
-
-    $("html, body").animate({
-    scrollTop: cont + 'px'
-    }, 1000);
-};
-/** scroll to ID **/
+/** smooth scroll to hash (by w3schools.com) **/
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top - 80
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+/** smooth scroll to hash (by w3schools.com) **/
 
 
     
@@ -369,10 +368,7 @@ $newElems.imagesLoaded(function(){
 $wall.masonry( 'appended', $newElems, {isAnimated: true, animationOptions: {duration: 250, easing: 'linear', queue: false}}, function(){$newElems.fadeIn('slow');} );
 });
 
-$("html, body").animate({
-    scrollTop: '+=150px',
-}, 500);
-
+    
 }); $('#posts').show(500);
 /** infinite scroll **/
 
@@ -397,8 +393,8 @@ body {margin: 0px; color: {color:Font};
 #all {opacity: 0;}
 
 ::-webkit-scrollbar {width: 5px; height: 5px; background: {color:Background};}
-::-webkit-scrollbar-thumb:vertical {background: {color:Sidebar} url('{image:Sidebar Background}'); border: 1px solid {color:Borders};}
-::-webkit-scrollbar-thumb:horizontal {background: {color:Sidebar} url('{image:Sidebar Background}'); border: 1px solid {color:Borders};}
+::-webkit-scrollbar-thumb:vertical {background: {color:Sidebar} url('{image:Sidebar Background}'); {block:IfBorders}border: 1px solid {color:Borders};{/block:IfBorders}}
+::-webkit-scrollbar-thumb:horizontal {background: {color:Sidebar} url('{image:Sidebar Background}'); {block:IfBorders}border: 1px solid {color:Borders};{/block:IfBorders}}
 
 a {transition: .9s; text-decoration: none; color: {color:Links};}
 a:hover {color: {color:Font}}
@@ -429,7 +425,11 @@ blockquote p:last-child {margin-bottom: 0px;}
 
 hr {border: none; border-top: 1px solid {color:Font}; margin: 20px 20px; opacity: .3;}
 
-pre {background: {color:Background}; overflow-x: scroll; padding: 10px; border: 1px solid {color:Borders};}
+pre {background: {color:Background}; overflow-x: scroll; padding: 10px; 
+{block:IfBorders}
+border: 1px solid {color:Borders};
+{/block:IfBorders}
+}
 
 pre b {color: {color:Titles};}
 pre strong {color: {color:Titles};}
@@ -513,7 +513,7 @@ aside {width: 200px; margin-top: 40px; position: absolute;
 }
 #desc::-webkit-scrollbar {background: {color:Boxes};}
 
-#sidebar h1 {font-size: {text:Titles font size}px; margin: 0px 5px -5px 5px; border-bottom: 1px solid {color:Borders}; padding: 5px 0px 10px 0px; text-align: center;}
+#sidebar h1 {font-size: {text:Titles font size}px; margin: 0px 5px -5px 5px; border-bottom: 1px solid {color:Background}; padding: 5px 0px 10px 0px; text-align: center;}
 #sidebar h1 a {color: {color:Titles};}
 
 
@@ -614,7 +614,7 @@ background: {color:Boxes} url('{image:Textured Borders}'); background-size: cove
 .caixa h1 a {color: {color:Titles};}
 .caixa h1 i {font-size: 14px; line-height: 20px; text-align: center;}
 
-.caixa h2 {display: table; border-bottom: 1px solid {color:Borders}; margin-top: 10px;}
+.caixa h2 {display: table; border-bottom: 1px solid {color:Background}; margin-top: 10px;}
 
 #ask_form, .ask_form, #ask_form iframe {height: 180px;}
 #ask_form, #submit_form {margin: 10px 0px;}
@@ -656,7 +656,9 @@ background: {color:Boxes} url('{image:Textured Borders}'); background-size: cove
 {block:NotPortugueseBR}
 .tumblr_blog:after {content: " said"; color: {color:Font};}
 {/block:NotPortugueseBR}
-.tumblr_blog_avatar {width: 14px; height: 14px; border-radius: 100%; border: 1px solid {color:Borders}; float: left;}
+.tumblr_blog_avatar {width: 14px; height: 14px; border-radius: 100%; float: left;
+    {block:IfBorders}border: 1px solid {color:Borders};{/block:IfBorders}
+}
 
 
 .caption-comments-section {border: 1px solid red;}
@@ -726,7 +728,9 @@ iframe.tumblr_audio_player {width: 100% !important; height: auto;}
 
 .audio_info {font-size: {text:Texts font size}px; line-height: {text:Texts font size}px; display: block; min-height: 110px; position: relative; font-family: 'Roboto Condensed', sans-serif;}
 .audio_info ul {margin: 0px; list-style: none; padding: 0px;}
-.audio_info li {margin-bottom: 1px; box-shadow: 0px 0px 0px 1px {color:Borders} inset; background: {color:Background};}
+.audio_info li {margin-bottom: 1px; background: {color:Background};
+    {block:IfBorders}box-shadow: 0px 0px 0px 1px {color:Borders} inset;{/block:IfBorders}
+}
 .audio_info i {width: {text:Texts font size}px; padding: 10px; margin-right: -10px; color: {color:Titles}; text-align: center;}
 .audio_info b {font-weight: normal; color: {color:Titles};}
 
@@ -751,15 +755,21 @@ iframe.tumblr_audio_player {width: 100% !important; height: auto;}
 
 
 /*** ANSWER/ASK ***/
-.ask_img {float: left; background: {color:Borders}; position: relative; overflow: hidden; border-radius: 100%; background: {color:Boxes}; box-shadow: 0px 0px 0px 5px {color:Boxes}, 0px 0px 0px 6px {color:Borders}; margin: 5px; margin-left: 0px;}
+.ask_img {float: left; background: {color:Borders}; position: relative; overflow: hidden; border-radius: 100%; background: {color:Boxes}; margin: 5px; margin-left: 0px;
+    {block:IfBorders}box-shadow: 0px 0px 0px 5px {color:Boxes}, 0px 0px 0px 6px {color:Borders};{/block:IfBorders}
+}
 .ask_img img {border-radius: 100%; margin-bottom: -4px; width: 64px;
 transition: .9s; opacity: {select:Images transparency}; filter: {select:Images effect}; -webkit-filter: {select:Images effect};}
 .caixa:hover .ask_img img {opacity: 1; filter: none; -webkit-filter: none;}
 
-.question {padding: 20px; padding-bottom: 10px; border: 1px solid {color:Borders}; margin-left: 84px; position: relative; background: {color:Background}; margin-bottom: 20px;}
+.question {padding: 20px; padding-bottom: 10px; margin-left: 84px; position: relative; background: {color:Background}; margin-bottom: 20px;
+    {block:IfBorders} border: 1px solid {color:Borders}; {/block:IfBorders}
+}
 
 .question_seta_content {width: 10px; height: 11px; overflow: hidden; position: absolute; right: 100%; top: 25px; z-index: 2; margin-right: -1px;}
-.question_seta {width: 10px; height: 10px; background:  {color:Background}; border: 1px solid {color:Borders}; transform: rotate(45deg); margin-left: 5px;}
+.question_seta {width: 10px; height: 10px; background: {color:Background}; transform: rotate(45deg); margin-left: 5px;
+    {block:IfBorders} border: 1px solid {color:Borders}; {/block:IfBorders}
+}
 
 .plaq {color: {color:Titles}; border-top: 1px solid {color:Borders}; font-size: 9px; font-family: 'Roboto Condensed'; padding-top: 10px; margin-top: 20px; text-transform: uppercase;  text-align: center;}
 
@@ -772,7 +782,9 @@ transition: .9s; opacity: {select:Images transparency}; filter: {select:Images e
 .post-options.top {top: 0px; left: -100px; min-width: 10px;}
 .caixa:hover .post-options.top {top: 0px; left: 10px;}
 
-.post-options p, .post-options .but {background: {color:Background}; border: 1px solid {color:Borders}; transition: .9s; position: relative;}
+.post-options p, .post-options .but {background: {color:Background}; transition: .9s; position: relative;
+    {block:IfBorders} border: 1px solid {color:Borders}; {/block:IfBorders}
+}
 
 .post-options p {padding: 5px;}
 .post-options p i {margin-right: 3px;}
@@ -866,7 +878,9 @@ transition: .9s; opacity: {select:Images transparency}; filter: {select:Images e
 
 
 /********** rolagem infinita **********/
-#infscr-loading {clear: both; font-size: 10px; font-family: 'Roboto Condensed'; text-transform: uppercase; position: absolute; bottom: 20px; z-index: 99999999; text-align: center; margin: 0px auto; background: {color:Boxes}; border: 1px solid {color:Borders}; padding: 5px; display: table;}
+#infscr-loading {clear: both; font-size: 10px; font-family: 'Roboto Condensed'; text-transform: uppercase; position: absolute; bottom: 20px; z-index: 99999999; text-align: center; margin: 0px auto; background: {color:Boxes}; padding: 5px; display: table;
+    {block:IfBorders} border: 1px solid {color:Borders}; {/block:IfBorders}
+}
 #infscr-loading i {font-size: 10px; color: {color:Titles};}
 #infscr-loading img {display: none;}
 
@@ -957,7 +971,9 @@ transition: .9s; opacity: {select:Images transparency}; filter: {select:Images e
 .leftcred {left: -83px;}
 .leftcred i {float: right; margin-left: 4px;}
 
-#cred .cred {color: {color:Font}; background: {color:Boxes}; padding: 5px; margin-bottom: 3px; transition: .9s; border: 1px solid {color:Borders};}
+#cred .cred {color: {color:Font}; background: {color:Boxes}; padding: 5px; margin-bottom: 3px; transition: .9s; 
+    {block:IfBorders}border: 1px solid {color:Borders};{/block:IfBorders}
+}
 #cred .cred i {color: {color:Font}; transition: .9s;}
 #cred .cred u {text-decoration: none; color: {color:Links};}
 
