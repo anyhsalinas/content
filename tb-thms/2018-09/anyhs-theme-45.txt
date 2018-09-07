@@ -237,19 +237,6 @@ $("#search_tag_button").click(function(){
 
 
 
-/** smooth scroll to hash (by w3schools.com) **/
-  $("a").on('click', function(event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      var hash = this.hash;
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top - 80
-      }, 800, function(){
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-/** smooth scroll to hash (by w3schools.com) **/
 
 
     
