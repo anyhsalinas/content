@@ -504,7 +504,7 @@ aside {width: 200px; margin-top: 40px; position: absolute;
 
 
 
-.sidebar_image {background: url('{image:Sidebar Background}'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; z-index: 1; transition: 0.9s;
+.sidebar_image {background: url('{image:Sidebar Background}'); background-size: cover; background-position: center; background-repeat: no-repeat; width: 100.5%; height: 100%; position: absolute; left: 0px; top: 0px; z-index: 1; transition: 0.9s;
     {select:Sidebar Background Animation}
 }
 
