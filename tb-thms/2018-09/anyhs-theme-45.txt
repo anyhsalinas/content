@@ -588,7 +588,9 @@ background: {color:Boxes} url('{image:Textured Borders}'); background-size: cove
 .caixa_inside {background: {color:Boxes}; padding: 20px;
     
     {block:IfBorders}
+    {block:IfTexturedBordersImage}
     border: 1px solid {color:Borders};
+    {/block:IfTexturedBordersImage}
     {/block:IfBorders}
 }
 
