@@ -585,13 +585,14 @@ background: {color:Boxes} url('{image:Textured Borders}'); background-size: cove
     {/block:PermalinkPage}
     
 }
-.caixa_inside {background: {color:Boxes}; padding: 20px;
+.caixa_inside {background: {color:Boxes}; 
     
-    {block:IfBorders}
     {block:IfTexturedBordersImage}
+    padding: 20px;
+    {block:IfBorders}
     border: 1px solid {color:Borders};
-    {/block:IfTexturedBordersImage}
     {/block:IfBorders}
+    {/block:IfTexturedBordersImage}
 }
 
 {block:PermalinkPage}
