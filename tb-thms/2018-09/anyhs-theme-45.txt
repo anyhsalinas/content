@@ -499,7 +499,7 @@ aside {width: 200px; margin-top: 40px; position: absolute;
 }
 #desc::-webkit-scrollbar {background: {color:Boxes};}
 
-#sidebar h1 {font-size: {text:Titles font size}px; margin: 0px 5px -5px 5px; border-bottom: 1px solid {color:Background}; padding: 5px 0px 10px 0px; text-align: center;}
+#sidebar h1 {font-size: {text:Titles font size}px; margin: 0px 5px -5px 5px; border-bottom: 1px solid {color:Borders}; padding: 5px 0px 10px 0px; text-align: center;}
 #sidebar h1 a {color: {color:Titles};}
 
 
@@ -604,7 +604,7 @@ background: {color:Boxes} url('{image:Textured Borders}'); background-size: cove
 .caixa h1 a {color: {color:Titles};}
 .caixa h1 i {font-size: 14px; line-height: 20px; text-align: center;}
 
-.caixa h2 {display: table; border-bottom: 1px solid {color:Background}; margin-top: 10px;}
+.caixa h2 {display: table; border-bottom: 1px solid {color:Borders}; margin-top: 10px;}
 
 #ask_form, .ask_form, #ask_form iframe {height: 180px;}
 #ask_form, #submit_form {margin: 10px 0px;}
