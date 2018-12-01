@@ -497,7 +497,7 @@ aside {width: 200px; margin-top: 40px; position: absolute;
     border: 1px solid {color:Borders};
     {/block:IfBorders}
 }
-#desc::-webkit-scrollbar {background: {color:Boxes};}
+#desc::-webkit-scrollbar {background: {color:Sidebar Content};}
 
 #sidebar h1 {font-size: {text:Titles font size}px; margin: 0px 5px -5px 5px; border-bottom: 1px solid {color:Borders}; padding: 5px 0px 10px 0px; text-align: center;}
 #sidebar h1 a {color: {color:Titles};}
