@@ -1595,19 +1595,6 @@ transition: 0.9s; opacity: {select:Images transparency}; filter: {select:Images 
 
 
 
-<!------------------------- FOOTER ------------------------->
-<footer id="footer">
-
-&copy; <a href="/">{Title}</a> &mdash; {CopyrightYears}
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-<i class="fas fa-plug" aria-hidden="true"></i> Powered by <a href="http://tumblr.com" target="_blank">Tumblr</a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-
-<i class="fas fa-paint-brush" aria-hidden="true"></i> Designed by <a href="http://anyhs-themes.tumblr.com" target="_blank">Anyh S.</a>
-
-</footer><!-- #footer -->
-
 
 </div><!-- #all -->
 
