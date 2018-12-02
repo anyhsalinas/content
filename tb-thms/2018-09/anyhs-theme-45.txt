@@ -850,7 +850,7 @@ transition: 0.9s; opacity: {select:Images transparency}; filter: {select:Images 
 
 
 /********** PAGINAÇÃO **********/
-#paginacao {font-size: 12px; line-height: 14px; text-align: center; margin: 0px auto; display: block; margin: 0px 0px;}
+#paginacao {font-size: 12px; line-height: 14px; text-align: center; display: block; margin: 0px 0px 40px 0px;}
 
 #paginacao i {color: {color:Menu Font};}
 #paginacao .seta {margin: 0px 20px; display: inline-block; font-size: 10px;}
@@ -877,10 +877,6 @@ transition: 0.9s; opacity: {select:Images transparency}; filter: {select:Images 
 
 
 
-
-
-/******************** FOOTER ********************/
-#footer {display: none;  background: {color:Boxes}; width: alc(100% - 40px); padding: 10px; font-family: 'Roboto Condensed', sans-serif; font-size: 11px; text-transform: uppercase; text-align: center;}
 
 
 
@@ -1533,10 +1529,8 @@ transition: 0.9s; opacity: {select:Images transparency}; filter: {select:Images 
 <div style="clear:both;"></div>
 
 
-<!------------------------- FOOTER ------------------------->
+<!------------------------- PAGINATION ------------------------->
 {block:IfNotInfiniteScrolling}
-<footer id="footer">
-
 {block:Pagination}
 <div id="paginacao">
 
@@ -1580,9 +1574,6 @@ transition: 0.9s; opacity: {select:Images transparency}; filter: {select:Images 
 
 </div> <!-- #paginacao -->
 {/block:Pagination}
-
-
-</footer>
 {/block:IfNotInfiniteScrolling}
 
 
