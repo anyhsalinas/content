@@ -608,8 +608,6 @@ background: {color:Boxes} url('{image:Textured Borders}'); background-size: cove
 
 
 .text {overflow: hidden;
-    font-size: {text:Texts font size}px;
-    line-height: calc({text:Texts font size}px + 4px);
 }
 
 .caption {
